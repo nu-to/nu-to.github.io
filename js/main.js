@@ -71,4 +71,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update CSS variable for scroll position (0 to 1)
         document.body.style.setProperty('--scroll', scrollPercent);
     }, { passive: true });
+
+    // --- Scroll to Top on Logo Click ---
+    const logo = document.querySelector('.logo');
+    if (logo) {
+        logo.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
