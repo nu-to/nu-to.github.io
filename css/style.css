@@ -20,8 +20,33 @@
     -webkit-font-smoothing: antialiased;
 }
 
+/* Google Sans Font Classes */
+.google-sans {
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    /* Default, can vary */
+    font-style: normal;
+    font-variation-settings: "GRAD" 0;
+}
+
+.google-sans-bold {
+    font-family: "Google Sans", sans-serif;
+    font-weight: 700;
+}
+
+.google-sans-flex {
+    font-family: "Google Sans", sans-serif;
+    /* Using same family as link handles var axes */
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "slnt" 0, "wdth" 100, "GRAD" 0, "ROND" 0;
+}
+
 body {
-    font-family: var(--font-stack);
+    font-family: "Google Sans", sans-serif;
+    /* Default application */
     background-color: var(--bg-color);
     color: var(--text-primary);
     line-height: 1.5;
@@ -371,6 +396,28 @@ ul.list-clean li:last-child {
     background: rgba(255, 255, 255, 0.9);
     transform: translateX(5px);
     box-shadow: var(--shadow-md);
+}
+
+/* Glass Cards (Unified) */
+.glass-card-style {
+    /* Use the generic glass-effect class logic */
+}
+
+/* Specific overrides if needed, but the main glass-effect handles it now */
+/* Clean up old award-card specific definition to avoid conflicts */
+.award-card {
+    display: flex;
+    align-items: start;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding: 20px;
+    /* Styles are handled by grouped selector in previous edit, just layout here */
+}
+
+.award-card i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-top: 3px;
 }
 
 .timeline-item::after {
