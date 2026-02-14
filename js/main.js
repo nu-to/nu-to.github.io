@@ -62,18 +62,20 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // --- Accordion Logic (Optional enhancement) ---
-    // Uncomment below if you want only one section open at a time
-    /*
-    const details = document.querySelectorAll("details");
-    details.forEach((targetDetail) => {
-        targetDetail.addEventListener("click", () => {
-            details.forEach((detail) => {
-                if (detail !== targetDetail) {
-                    detail.removeAttribute("open");
-                }
-            });
-        });
+    // --- Cursor Following Background ---
+    const bgContainer = document.createElement('div');
+    bgContainer.id = 'interactive-bg';
+    document.body.prepend(bgContainer);
+
+    const orb = document.createElement('div');
+    orb.className = 'gradient-orb';
+    bgContainer.appendChild(orb);
+
+    document.addEventListener('mousemove', (e) => {
+        const x = e.clientX;
+        const y = e.clientY;
+
+        // Slight delay/smoothness is handled by CSS transition
+        orb.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
     });
-    */
 });
