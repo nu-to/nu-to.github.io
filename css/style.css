@@ -270,11 +270,13 @@ ul.list-clean li:last-child {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 52px;
+    height: 60px;
+    /* Increased from 52px */
     z-index: 9999;
-    background: var(--nav-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(24px) saturate(180%);
+    /* Enhanced Frosted Glass */
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     transition: background 0.3s ease;
 }
@@ -292,7 +294,8 @@ ul.list-clean li:last-child {
 .logo {
     font-weight: 600;
     color: var(--text-primary);
-    font-size: 1.1rem;
+    font-size: 1.25rem;
+    /* Increased from 1.1rem */
 }
 
 .logo:hover {
@@ -307,7 +310,8 @@ ul.list-clean li:last-child {
 
 .nav-links a {
     color: var(--text-secondary);
-    font-size: 0.8rem;
+    font-size: 0.95rem;
+    /* Increased from 0.8rem */
     font-weight: 500;
 }
 
@@ -332,7 +336,8 @@ ul.list-clean li:last-child {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 60px;
+    padding-top: 80px;
+    /* Increased buffer for larger nav */
     position: relative;
     z-index: 2;
 }

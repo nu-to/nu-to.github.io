@@ -1,26 +1,12 @@
-# Dr. Nuwan Thotawaththa - Official Website
+# Dr. Nuwan Thotawaththa
 
-Welcome to the official portfolio and professional website of **Dr. Nuwan Thotawaththa**, Public Health Specialist, Award-Winning Author, and Poet.
+**Public Health Specialist | Award-Winning Children’s Author | Poet**
 
-## 🌐 Visit the Live Site
+Dr. Nuwan Thotawaththa is a Sri Lankan public health specialist, award-winning children’s author, and recognised poet whose work bridges community medicine, narrative practice, and health communication.
+
+He holds an MBBS from the University of Peradeniya and an MSc and MD in Community Medicine from the University of Colombo. He currently serves as a Senior Registrar in Community Medicine at the Health Promotion Bureau, Ministry of Health, Sri Lanka, contributing to national health promotion strategy, behavioural communication initiatives, and programme monitoring and evaluation.
+
+Dr. Thotawaththa’s academic work focuses on storytelling as an evidence-based tool for health literacy and social and behavioural change communication. Alongside his medical and public health career, he is one of Sri Lanka’s leading children’s authors, with more than 60 published books, and a recipient of the State Literary Award for Children’s Literature.
+
+## 🌐 Visit the Official Website
 👉 **[https://nu-to.github.io/](https://nu-to.github.io/)**
-
-## About This Project
-This repository hosts the source code for Dr. Nuwan Thotawaththa's personal website. The site serves as a comprehensive digital curriculum vitae, showcasing his work in:
-- **Public Health & Epidemiology**: Promoting maternal and child health in Sri Lanka.
-- **Children's Literature**: Highlighting his award-winning books and storytelling for health communication.
-- **Poetry & Arts**: A collection of his literary contributions and creative works.
-
-## Key Features
-- **Modern "Apple-esque" Design**: Clean typography, glassmorphism UI, and dynamic animations.
-- **Interactive Experience**: A living "Aurora" gradient background that shifts as you explore.
-- **Responsive Layout**: Optimized for seamless viewing on mobile, tablet, and desktop devices.
-- **Comprehensive Portfolio**: Detailed timelines of professional experience, research, and publications.
-
-## Technologies Used
-- **HTML5 & CSS3**: Custom grid layouts and advanced CSS animations.
-- **JavaScript**: Dynamic scroll effects and interactive UI elements.
-- **Google Sans Font**: For a clean, modern readable aesthetic.
-
----
-&copy; 2026 Dr. Nuwan Thotawaththa. All Rights Reserved.
