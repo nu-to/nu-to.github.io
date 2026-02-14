@@ -61,4 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.fade-up').forEach(el => {
         observer.observe(el);
     });
+
+    // --- Dynamic Scroll-Linked Variables ---
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = scrollTop / docHeight;
+
+        // Update CSS variable for scroll position (0 to 1)
+        document.body.style.setProperty('--scroll', scrollPercent);
+    }, { passive: true });
 });
