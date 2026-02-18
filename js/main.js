@@ -119,9 +119,42 @@ document.addEventListener('DOMContentLoaded', () => {
         animationId = requestAnimationFrame(autoScroll);
 
         // Pause on Hover / Touch
+        // Pause on Hover / Touch
         container.addEventListener('mouseenter', () => isPaused = true);
-        container.addEventListener('mouseleave', () => isPaused = false);
         container.addEventListener('touchstart', () => isPaused = true);
         container.addEventListener('touchend', () => isPaused = false);
+
+        // Manual Scroll (Drag to Scroll) for Desktop
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        container.addEventListener('mousedown', (e) => {
+            isDown = true;
+            container.classList.add('active'); // Optional: can be used for CSS styling
+            startX = e.pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+            isPaused = true; // Pause auto-scroll while dragging
+        });
+
+        container.addEventListener('mouseleave', () => {
+            isDown = false;
+            container.classList.remove('active');
+            isPaused = false; // Resume auto-scroll
+        });
+
+        container.addEventListener('mouseup', () => {
+            isDown = false;
+            container.classList.remove('active');
+            isPaused = false; // Resume auto-scroll
+        });
+
+        container.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const walk = (x - startX) * 2; // Scroll speed multiplier
+            container.scrollLeft = scrollLeft - walk;
+        });
     }
 });
