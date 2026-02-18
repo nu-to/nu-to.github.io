@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- References ---
+    const navbar = document.getElementById('navbar');
+    const cursorGlow = document.getElementById('cursor-glow');
+
     // --- Mobile Navigation ---
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -70,7 +74,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update CSS variable for scroll position (0 to 1)
         document.body.style.setProperty('--scroll', scrollPercent);
+
+        // Navbar scroll state
+        if (navbar) {
+            navbar.classList.toggle('scrolled', scrollTop > 20);
+        }
     }, { passive: true });
+
+    // --- Cursor Glow ---
+    if (cursorGlow) {
+        window.addEventListener('mousemove', (e) => {
+            cursorGlow.style.transform = `translate(${e.clientX - 300}px, ${e.clientY - 300}px)`;
+        }, { passive: true });
+    }
 
     // --- Scroll to Top on Logo Click ---
     const logo = document.querySelector('.logo');
