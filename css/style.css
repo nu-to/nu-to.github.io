@@ -504,9 +504,7 @@ ul.list-clean li:last-child {
 }
 
 /* Glass Cards (Unified) */
-.glass-card-style {
-    /* Use the generic glass-effect class logic */
-}
+
 
 /* Specific overrides if needed, but the main glass-effect handles it now */
 /* Clean up old award-card specific definition to avoid conflicts */
@@ -727,6 +725,71 @@ footer {
 .fade-up.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+/* Book Carousel */
+.book-carousel-section {
+    margin: 40px 0 60px 0;
+    position: relative;
+    /* Ensure it doesn't overflow the viewport width if on mobile */
+    max-width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    width: 100vw;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow-x: auto;
+    /* Allow manual scrolling mechanics */
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    /* Smooth momentum scroll on iOS */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 10+ */
+    padding: 20px 0;
+    /* Add mask for fading edges */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+.carousel-track {
+    display: inline-flex;
+    gap: 30px;
+    padding: 0 50px;
+    /* Initial padding side */
+    /* Hardware acceleration for smoother animation */
+    will-change: transform;
+}
+
+.carousel-track img {
+    height: 350px;
+    /* Adjust height as needed */
+    width: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+    cursor: pointer;
+    background: #fff;
+    /* Fallback */
+    /* Prevent dragging image itself, we want to scroll the container */
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.carousel-track img:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    z-index: 10;
 }
 
 /* Mobile Responsiveness */
