@@ -83,4 +83,78 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+    // --- Book Carousel Logic ---
+    const track = document.getElementById('book-carousel-track');
+    const container = document.querySelector('.carousel-container');
+
+    if (track && container) {
+        // Clone items for infinite effect
+        const items = Array.from(track.children);
+        items.forEach(item => {
+            const clone = item.cloneNode(true);
+            track.appendChild(clone);
+        });
+
+        // Auto Scroll Variables
+        let scrollSpeed = 1; // Pixels per frame
+        let isPaused = false;
+        let animationId;
+
+        // Auto Scroll Function
+        const autoScroll = () => {
+            if (!isPaused) {
+                container.scrollLeft += scrollSpeed;
+
+                // Reset logic for seamless loop
+                // If we've scrolled past the halfway point (width of original set), reset to 0
+                // Note: This assumes the cloned set is identical width to the original set
+                if (container.scrollLeft >= track.scrollWidth / 2) {
+                    container.scrollLeft = 0;
+                }
+            }
+            animationId = requestAnimationFrame(autoScroll);
+        };
+
+        // Start Animation
+        animationId = requestAnimationFrame(autoScroll);
+
+        // Pause on Hover / Touch
+        // Pause on Hover / Touch
+        container.addEventListener('mouseenter', () => isPaused = true);
+        container.addEventListener('touchstart', () => isPaused = true);
+        container.addEventListener('touchend', () => isPaused = false);
+
+        // Manual Scroll (Drag to Scroll) for Desktop
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        container.addEventListener('mousedown', (e) => {
+            isDown = true;
+            container.classList.add('active'); // Optional: can be used for CSS styling
+            startX = e.pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+            isPaused = true; // Pause auto-scroll while dragging
+        });
+
+        container.addEventListener('mouseleave', () => {
+            isDown = false;
+            container.classList.remove('active');
+            isPaused = false; // Resume auto-scroll
+        });
+
+        container.addEventListener('mouseup', () => {
+            isDown = false;
+            container.classList.remove('active');
+            isPaused = false; // Resume auto-scroll
+        });
+
+        container.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const walk = (x - startX) * 2; // Scroll speed multiplier
+            container.scrollLeft = scrollLeft - walk;
+        });
+    }
 });

@@ -155,8 +155,7 @@ body {
 
 /* Typography */
 h1 {
-    font-size: 3.5rem;
-    /* 56px */
+    font-size: 3rem;
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.1;
@@ -164,30 +163,30 @@ h1 {
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 600;
     letter-spacing: -0.015em;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 h3 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
 h4 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
     color: var(--text-primary);
 }
 
 p {
-    font-size: 1.0625rem;
-    /* 17px */
+    font-size: 0.95rem;
+    /* Compact text size */
     color: var(--text-secondary);
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     line-height: 1.6;
 }
 
@@ -207,9 +206,11 @@ ul.list-clean {
 }
 
 ul.list-clean li {
-    padding: 0.5rem 0;
+    padding: 0.4rem 0;
+    /* Compact list padding */
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     color: var(--text-secondary);
+    font-size: 0.95rem;
 }
 
 ul.list-clean li:last-child {
@@ -218,28 +219,29 @@ ul.list-clean li:last-child {
 
 /* Layout */
 .container {
-    max-width: 1100px;
-    /* Slightly wider for better spacing */
+    max-width: 1000px;
+    /* Slightly tighter width for compact feel */
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .section-padding {
-    padding: 60px 0;
-    /* Reduced from 100px */
+    padding: 50px 0;
+    /* Compact section spacing */
 }
 
 .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    /* Reduced gap */
+    gap: 25px;
+    /* Compact gap */
 }
 
 .grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 20px;
+    /* Compact gap */
 }
 
 .bg-light {
@@ -262,7 +264,7 @@ ul.list-clean li:last-child {
 }
 
 .mt-4 {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 /* Navigation */
@@ -408,29 +410,41 @@ ul.list-clean li:last-child {
 }
 
 /* Glass Card Mixin Class */
-.glass-effect {
+.glass-effect,
+.award-card,
+.timeline-card,
+.card,
+.accordion {
     background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    border-radius: 18px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    /* Subtle shadow */
+    border-radius: 12px;
+    /* Tighter radius */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    padding: 20px;
+    /* Compact padding */
 }
 
-.glass-effect:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+.glass-effect:hover,
+.award-card:hover,
+.timeline-card:hover,
+.card:hover {
     background: rgba(255, 255, 255, 0.85);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    /* Softer shadow */
 }
 
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 12px 24px;
+    padding: 10px 22px;
+    /* Compact button */
     border-radius: 980px;
-    /* Pill shape */
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
     transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
     border: 1px solid transparent;
@@ -470,7 +484,6 @@ ul.list-clean li:last-child {
     content: '';
     position: absolute;
     left: 20px;
-    /* Adjusted for card layout */
     top: 0;
     height: 100%;
     width: 2px;
@@ -479,34 +492,16 @@ ul.list-clean li:last-child {
 }
 
 .timeline-item {
-    margin-bottom: 30px;
-    padding-left: 60px;
-    /* Space for line */
+    margin-bottom: 25px;
+    /* Compact spacing */
+    padding-left: 50px;
     position: relative;
 }
 
-.timeline-card {
-    /* Extending glass-effect properties manually or via class in HTML */
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 16px;
-    padding: 25px;
-    box-shadow: var(--shadow-sm);
-    transition: all 0.3s ease;
-}
 
-.timeline-card:hover {
-    background: rgba(255, 255, 255, 0.9);
-    transform: translateX(5px);
-    box-shadow: var(--shadow-md);
-}
 
 /* Glass Cards (Unified) */
-.glass-card-style {
-    /* Use the generic glass-effect class logic */
-}
+
 
 /* Specific overrides if needed, but the main glass-effect handles it now */
 /* Clean up old award-card specific definition to avoid conflicts */
@@ -515,12 +510,11 @@ ul.list-clean li:last-child {
     align-items: start;
     gap: 15px;
     margin-bottom: 15px;
-    padding: 20px;
     /* Styles are handled by grouped selector in previous edit, just layout here */
 }
 
 .award-card i {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--accent-color);
     margin-top: 3px;
 }
@@ -529,15 +523,13 @@ ul.list-clean li:last-child {
     content: '';
     position: absolute;
     left: 14px;
-    /* Align with line */
-    top: 35px;
-    /* Align with card content top */
+    top: 25px;
+    /* Adjusted for new card padding */
     width: 14px;
     height: 14px;
     border-radius: 50%;
     background: var(--accent-color);
     border: 3px solid #f5f5f7;
-    /* Match bg */
     z-index: 1;
 }
 
@@ -557,28 +549,13 @@ ul.list-clean li:last-child {
 }
 
 /* Cards */
-.card {
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    padding: 25px;
-    border-radius: 18px;
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
-    background: rgba(255, 255, 255, 0.9);
-}
 
 .year {
     font-weight: 700;
     color: var(--accent-color);
     display: block;
-    margin: 10px 0;
+    margin: 8px 0;
 }
 
 /* Accordions */
@@ -588,17 +565,14 @@ ul.list-clean li:last-child {
 }
 
 .accordion {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: var(--shadow-sm);
-    border-radius: 12px;
-    margin-bottom: 15px;
-    overflow: hidden;
+    /* Styles handled by grouped selector */
+    margin-bottom: 12px;
+    padding: 0;
+    /* Accordion padding is handled by summary/content */
 }
 
 .accordion summary {
-    padding: 20px 25px;
+    padding: 18px 25px;
     cursor: pointer;
     list-style: none;
     display: flex;
@@ -644,9 +618,36 @@ ul.list-clean li:last-child {
 }
 
 /* Contact & Footer */
-.contact-info p {
-    font-size: 1.2rem;
-    margin: 1rem 0;
+/* Contact & Footer */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.contact-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-icon-link:hover {
+    background: var(--accent-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: transparent;
+    text-decoration: none;
+    color: white;
+    /* Ensure icon stays white */
 }
 
 footer {
@@ -727,6 +728,76 @@ footer {
 .fade-up.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+/* Book Carousel */
+.book-carousel-section {
+    margin: 40px 0 60px 0;
+    position: relative;
+    /* Ensure it doesn't overflow the viewport width if on mobile */
+    max-width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    width: 100vw;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow-x: auto;
+    /* Allow manual scrolling mechanics */
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    /* Smooth momentum scroll on iOS */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 10+ */
+    padding: 20px 0;
+    /* Add mask for fading edges */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    cursor: grab;
+}
+
+.carousel-container:active {
+    cursor: grabbing;
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+.carousel-track {
+    display: inline-flex;
+    gap: 30px;
+    padding: 0 50px;
+    /* Initial padding side */
+    /* Hardware acceleration for smoother animation */
+    will-change: transform;
+}
+
+.carousel-track img {
+    height: 350px;
+    /* Adjust height as needed */
+    width: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+    cursor: pointer;
+    background: #fff;
+    /* Fallback */
+    /* Prevent dragging image itself, we want to scroll the container */
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.carousel-track img:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    z-index: 10;
 }
 
 /* Mobile Responsiveness */

@@ -270,6 +270,37 @@
             <p class="section-desc">A selection of over 60 published works including poetry, children's fiction, and
                 health communication.</p>
 
+            <!-- Book Cover Carousel -->
+            <div class="book-carousel-section fade-up">
+                <div class="carousel-container">
+                    <div class="carousel-track" id="book-carousel-track">
+                        <!-- Images will be injected by JS or hardcoded here if preferred, 
+                             but for simplicity and maintainability, let's hardcode them since the list is fixed and small. -->
+                        <img src="docs/book-covers/A.png" alt="Book Cover" loading="lazy">
+                        <img src="docs/book-covers/AA.png" alt="Book Cover" loading="lazy">
+                        <img src="docs/book-covers/B.png" alt="Book Cover" loading="lazy">
+                        <img src="docs/book-covers/BB.png" alt="Book Cover" loading="lazy">
+                        <img src="docs/book-covers/C.png" alt="Book Cover" loading="lazy">
+                        <img src="docs/book-covers/CC.png" alt="Book Cover" loading="lazy">
+                        <img src="docs/book-covers/D.png" alt="Book Cover" loading="lazy">
+                        <img src="docs/book-covers/DD.png" alt="Book Cover" loading="lazy">
+                        <img src="docs/book-covers/E.png" alt="Book Cover" loading="lazy">
+                        <img src="docs/book-covers/EE.png" alt="Book Cover" loading="lazy">
+                        <img src="docs/book-covers/F.png" alt="Book Cover" loading="lazy">
+                        <img src="docs/book-covers/FF.png" alt="Book Cover" loading="lazy">
+                        <img src="docs/book-covers/G.png" alt="Book Cover" loading="lazy">
+                        <img src="docs/book-covers/GG.png" alt="Book Cover" loading="lazy">
+                        <img src="docs/book-covers/H.png" alt="Book Cover" loading="lazy">
+                        <img src="docs/book-covers/HH.png" alt="Book Cover" loading="lazy">
+                        <img src="docs/book-covers/I.png" alt="Book Cover" loading="lazy">
+                        <img src="docs/book-covers/II.png" alt="Book Cover" loading="lazy">
+                        <img src="docs/book-covers/K.png" alt="Book Cover" loading="lazy">
+                        <img src="docs/book-covers/KK.png" alt="Book Cover" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+
             <div class="accordion-group">
                 <details class="accordion">
                     <summary>
@@ -437,7 +468,8 @@
     <!-- Awards & Referees -->
     <section id="awards" class="section-padding">
         <div class="container fade-up">
-            <div class="grid-2">
+            <!-- Changed grid-2 to simple div to expand awards section while referees are hidden -->
+            <div> <!-- class="grid-2" -->
                 <div>
                     <h2 class="section-title">Awards & Nominations</h2>
                     <div class="award-cards-list">
@@ -476,6 +508,8 @@
                     </div>
                 </div>
 
+                <!-- Referees Section (Hidden) -->
+                <!-- 
                 <div>
                     <h2 class="section-title">Referees</h2>
                     <div class="referee-card card glass-effect">
@@ -496,7 +530,8 @@
                             Peradeniya</p>
                         <p><a href="mailto:vasantipinto@yahoo.com">vasantipinto@yahoo.com</a></p>
                     </div>
-                </div>
+                </div> 
+                -->
             </div>
         </div>
     </section>
@@ -505,10 +540,13 @@
     <section id="contact" class="section-padding bg-dark text-white">
         <div class="container text-center fade-up">
             <h2 class="section-title text-white">Get in Touch</h2>
-            <div class="contact-info">
-                <p><i class="fas fa-envelope"></i> Nuwanthotawaththa@gmail.com</p>
-                <p><i class="fas fa-phone"></i> +94 77 8182288</p>
-                <p><i class="fas fa-map-marker-alt"></i> 41, Meewaththa Kumbura, Matale, Sri Lanka</p>
+            <div class="contact-icons">
+                <a href="mailto:Nuwanthotawaththa@gmail.com" class="contact-icon-link" title="Send Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:+94778182288" class="contact-icon-link" title="Call">
+                    <i class="fas fa-phone"></i>
+                </a>
             </div>
         </div>
     </section>
