@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nu-to.github.io/sitemap.xml
